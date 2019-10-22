@@ -3,28 +3,28 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "chriscasano/fib-app-client",
+      "image": "chriscasano/fibApp-client",
       "hostname": "client",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
-      "image": "chriscasano/fib-app-server",
+      "image": "chriscasano/fibApp-server",
       "hostname": "api",
       "essential": false,
       "memory": 128
     },
     {
       "name": "workder",
-      "image": "chriscasano/fib-app-worker",
+      "image": "chriscasano/fibApp-worker",
       "hostname": "worker",
       "essential": false,
       "memory": 128
     },
     {
       "name": "nginx",
-      "image": "chriscasano/fib-app-nginx",
+      "image": "chriscasano/fibApp-nginx",
       "hostname": "nginx",
       "essential": true,
       "memory": 128,

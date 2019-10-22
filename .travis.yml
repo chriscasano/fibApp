@@ -3,22 +3,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t chriscasano/fibApp -f ./client/Dockerfile.dev ./client
+  - pwd
+  - docker build -t chriscasano/fibapp -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e -CI=true chriscasano/fibApp npm test -- --coverage
+  - docker run -e -CI=true chriscasano/fibapp npm test -- --coverage
 
 after_success:
-  - docker build -t chriscasano/fibApp-client ./client
-  - docker build -t chriscasano/fibApp-nginx ./client
-  - docker build -t chriscasano/fibApp-server ./client
-  - docker build -t chriscasano/fibApp-worker ./client
+  - docker build -t chriscasano/fibapp-client ./client
+  - docker build -t chriscasano/fibapp-nginx ./client
+  - docker build -t chriscasano/fibapp-server ./client
+  - docker build -t chriscasano/fibapp-worker ./client
 
 # Log into Docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push images to Docker hub
-  - docker push chriscasano/fibApp-client
-  - docker push chriscasano/fibApp-nginx
-  - docker push chriscasano/fibApp-server
-  - docker push chriscasano/fibApp-worker
+  - docker push chriscasano/fibapp-client
+  - docker push chriscasano/fibapp-nginx
+  - docker push chriscasano/fibapp-server
+  - docker push chriscasano/fibapp-worker
