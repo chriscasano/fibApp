@@ -36,14 +36,14 @@ class Fib extends Component {
   };
 
   renderSeenIndexes() {
-    return this.state.seenIndexes.map(({ number }) => number ).join(', ');
+      return this.state.seenIndexes.map(({ number }) => number ).join(', ');
   }
 
   renderValues() {
     console.log('Render Values');
     const entries = [];
     for (let key in this.state.values) {
-      console.log('KV',this.state.values[key]);
+      //console.log('KV',this.state.values[key]);
       entries.push(
         <div key={key}>
         For index {key} I Calculated {this.state.values[key]}
